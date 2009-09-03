@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TradeAccount>
+  <APIAccount APICompany="台証" Account="0020200">
+    <Pass>dada2338</Pass>
+    <UID>F126351393</UID>
+    <Branch>003</Branch>
+    <CAPath>C:\ekey\940\F126351393\S</CAPath>
+  </APIAccount>
+</TradeAccount>

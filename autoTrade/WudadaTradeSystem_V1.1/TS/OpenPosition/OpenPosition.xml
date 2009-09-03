@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<OpenPositions>
+  <System SystemName="JRU-Range-Ex">
+    <Symbol>JRU</Symbol>
+    <EntryPrice>202.5</EntryPrice>
+    <Profit>14500</Profit>
+    <EntryTime>2009-09-03T11:45:00</EntryTime>
+    <Signal>1</Signal>
+    <Workspace>JRU-Range-Ex.orw</Workspace>
+    <PositionNumber>0</PositionNumber>
+  </System>
+</OpenPositions>

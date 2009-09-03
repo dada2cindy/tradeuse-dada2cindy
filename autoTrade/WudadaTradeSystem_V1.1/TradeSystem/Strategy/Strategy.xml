@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TradeSystem>
+  <Strategy StrategyName="JRU-Range-Ex">
+    <FileType>1</FileType>
+    <FileName />
+    <Signal>1</Signal>
+    <OrderPrice>202.5</OrderPrice>
+  </Strategy>
+</TradeSystem>

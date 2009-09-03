@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TradeAccount>
+  <MyAccount AccountName="台指">
+    <APICompany>台証</APICompany>
+    <Account>0020200</Account>
+    <Email></Email>
+    <Msn></Msn>
+    <Phone></Phone>
+    <ProductType>1</ProductType>
+    <Exchange>NO</Exchange>
+    <ProductName>台指</ProductName>
+    <ProductId>FITX</ProductId>
+    <OPType>-1</OPType>
+    <DealPrice>0</DealPrice>
+    <StockType>-1</StockType>
+    <IsStockPublic>False</IsStockPublic>
+    <IsDayTrade>False</IsDayTrade>
+    <TradeMonth>2009/08</TradeMonth>
+    <ExMessage></ExMessage>
+  </MyAccount>
+  <MyAccount AccountName="橡膠15分">
+    <APICompany>台証</APICompany>
+    <Account>0020200</Account>
+    <Email></Email>
+    <Msn></Msn>
+    <Phone></Phone>
+    <ProductType>3</ProductType>
+    <Exchange>TOCOM</Exchange>
+    <ProductName>橡膠</ProductName>
+    <ProductId>RSS3</ProductId>
+    <OPType>-1</OPType>
+    <DealPrice>0</DealPrice>
+    <StockType>-1</StockType>
+    <IsStockPublic>False</IsStockPublic>
+    <IsDayTrade>False</IsDayTrade>
+    <TradeMonth>2010/02</TradeMonth>
+    <ExMessage></ExMessage>
+  </MyAccount>
+</TradeAccount>
