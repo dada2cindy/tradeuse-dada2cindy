@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MyLogList>
+  <MyLog LogLevel="2">
+    <LogDate>2009-07-31T01:31:28.515625+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-07-31T01:33:25.515625+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-07-31T01:33:40.53125+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-07-31T01:33:46.515625+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-07-31T01:33:53.78125+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-07-31T08:00:01.96875+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-07-31T08:15:10.984375+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-07-31T09:09:08.109375+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-07-31T09:09:14.109375+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-08-04T12:44:17.4375+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託失敗！錯誤代碼：0</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-08-04T12:45:01.34375+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託失敗！錯誤代碼：0</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-08-04T15:21:19.25+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-08-09T21:36:33.640625+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-08-09T21:36:45.640625+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-08-10T16:21:08.8125+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-08-10T16:31:31.796875+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-08-11T18:44:12.734375+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託失敗！錯誤代碼：0</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-08-11T18:51:31.21875+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-08-12T14:28:08.9927268+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-08-12T14:45:02.9614768+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-08-12T16:10:50.992625+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-08-14T08:15:06.875+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託失敗！錯誤代碼：0</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-08-24T08:15:05.96875+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-08-31T00:22:59.484375+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-08-31T00:23:25.640625+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-08-31T00:24:50.765625+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 1次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-08-31T00:25:21.5625+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-08-31T00:25:30.546875+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-08-31T08:15:37.640625+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 1次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-08-31T09:04:28.5+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-08-31T09:15:04.484375+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-09-01T22:57:24.71875+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 1次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-09-02T04:16:14.890625+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 1次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-09-02T04:16:14.921875+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 2次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-09-02T16:56:37.9403536+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 1次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-09-02T16:56:37.9716036+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 2次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-09-02T18:52:35.2216036+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-09-03T11:25:12.671875+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-09-03T11:30:06.53125+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-09-03T22:40:28.890625+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 1次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-09-03T22:40:28.953125+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 2次</LogMessage>
+  </MyLog>
+</MyLogList>

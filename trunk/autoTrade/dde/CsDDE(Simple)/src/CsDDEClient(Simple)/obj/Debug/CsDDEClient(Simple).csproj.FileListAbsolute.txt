@@ -1,0 +1,10 @@
+C:\Documents and Settings\Administrator\My Documents\My Projects\dotNET\CsDDE(Simple)\CsDDEClient(Simple)\bin\Debug\CsDDEClient(Simple).exe
+C:\Documents and Settings\Administrator\My Documents\My Projects\dotNET\CsDDE(Simple)\CsDDEClient(Simple)\bin\Debug\CsDDEClient(Simple).pdb
+C:\Documents and Settings\Administrator\My Documents\My Projects\dotNET\CsDDE(Simple)\CsDDEClient(Simple)\bin\Debug\NDde.dll
+C:\Documents and Settings\Administrator\My Documents\My Projects\dotNET\CsDDE(Simple)\CsDDEClient(Simple)\bin\Debug\NDde.xml
+C:\Documents and Settings\Administrator\My Documents\My Projects\dotNET\CsDDE(Simple)\CsDDEClient(Simple)\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\My Projects\dotNET\CsDDE(Simple)\CsDDEClient(Simple)\obj\Debug\CsDDE_Simple_.DDEClientFrm.resources
+C:\Documents and Settings\Administrator\My Documents\My Projects\dotNET\CsDDE(Simple)\CsDDEClient(Simple)\obj\Debug\CsDDE_Simple_.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\My Projects\dotNET\CsDDE(Simple)\CsDDEClient(Simple)\obj\Debug\CsDDEClient(Simple).csproj.GenerateResource.Cache
+C:\Documents and Settings\Administrator\My Documents\My Projects\dotNET\CsDDE(Simple)\CsDDEClient(Simple)\obj\Debug\CsDDEClient(Simple).exe
+C:\Documents and Settings\Administrator\My Documents\My Projects\dotNET\CsDDE(Simple)\CsDDEClient(Simple)\obj\Debug\CsDDEClient(Simple).pdb
