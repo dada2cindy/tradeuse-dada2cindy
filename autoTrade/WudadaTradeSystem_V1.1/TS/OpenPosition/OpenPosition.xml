@@ -3,7 +3,7 @@
   <System SystemName="JRU-Range-Ex">
     <Symbol>JRU</Symbol>
     <EntryPrice>202.5</EntryPrice>
-    <Profit>14500</Profit>
+    <Profit>26500</Profit>
     <EntryTime>2009-09-03T11:45:00</EntryTime>
     <Signal>1</Signal>
     <Workspace>JRU-Range-Ex.orw</Workspace>
