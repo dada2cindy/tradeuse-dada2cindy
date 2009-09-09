@@ -180,4 +180,12 @@
     <LogDate>2009-09-07T04:36:26.484375+08:00</LogDate>
     <LogMessage>台証0020200重新連線第 2次</LogMessage>
   </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-09-09T01:01:03.5625+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託失敗！錯誤代碼：0</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-09-09T17:18:36.195762+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 1次</LogMessage>
+  </MyLog>
 </MyLogList>
