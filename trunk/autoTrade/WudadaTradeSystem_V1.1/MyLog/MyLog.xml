@@ -188,4 +188,12 @@
     <LogDate>2009-09-09T17:18:36.195762+08:00</LogDate>
     <LogMessage>台証0020200重新連線第 1次</LogMessage>
   </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-09-10T04:14:39.05475+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 1次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-09-10T04:14:39.101625+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 2次</LogMessage>
+  </MyLog>
 </MyLogList>
