@@ -3,7 +3,7 @@
   <Strategy StrategyName="JRU-Range-Ex">
     <FileType>1</FileType>
     <FileName />
-    <Signal>1</Signal>
-    <OrderPrice>202.5</OrderPrice>
+    <Signal>0</Signal>
+    <OrderPrice>0</OrderPrice>
   </Strategy>
 </TradeSystem>
