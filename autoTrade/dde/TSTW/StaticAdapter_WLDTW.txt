@@ -1,0 +1,7 @@
+Name=WLDTW Adapter
+ShortName=WLDTW
+DLL=WLDTW.DLL
+ComClassName=WLDTW.WLDTWCtrl
+URL=wldtw2008@googlemail.com
+DESC=WLDTW is a soft-adapter to fed the trade data of Taiwan Futures Exchange.
+Bitmap=WLDTW.bmp

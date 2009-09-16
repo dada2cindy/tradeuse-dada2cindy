@@ -1,0 +1,93 @@
+TSTW v1.1.11說明書[2009/8/7更新]    
+
+http://docs.google.com/Doc?id=dhmjrb2n_4d533m4fj 
+請密切注意此動態網頁，有新版或相關訊息都會在此發佈。
+
+●版權宣告●
+ **************************************
+    本程式僅供個人測試使用, 切勿將收到的
+    交易資訊轉發至廣域網路上, 以免觸法！
+    因網路散佈無遠弗屆, 為避免不可收拾之
+    情事發生, 本程式設有日期限制, 屆時本
+    程式大部分功能將被禁制.
+    您可來信：wldtw2008@googlemail.com
+
+    或瀏覽：http://wldtw2008.at.3322.org
+    索取最新版本.
+ **************************************
+
+ [請注意，本程式將取代MSRT DDE的使用，若您以TS+MSRT穩定使用的話，請不要使用本程式]
+ [請注意，本程式將取代MSRT DDE的使用，若您以TS+MSRT穩定使用的話，請不要使用本程式]
+ [請注意，本程式將取代MSRT DDE的使用，若您以TS+MSRT穩定使用的話，請不要使用本程式]
+ 
+
+●相關發佈聯結●
+最新版本下載：請參閱http://docs.google.com/Doc?id=dhmjrb2n_4d533m4fj內容
+最新說明書：http://docs.google.com/Doc?id=dhmjrb2n_4d533m4fj
+說明書沒教的事：http://docs.google.com/Doc?id=dhmjrb2n_2gzmnxxgq 
+如果您是為了Wealth-Lab來的，請至： http://docs.google.com/Doc?id=dhmjrb2n_1hq7nr67c [WLDTW]
+如果您是為了NeoTicker來的，請至：http://docs.google.com/Doc?id=dhmjrb2n_6d94b8c62 [NTTW]
+
+
+●相關網路資源聯結●
+雅策資訊TS完全求生手冊：http://www.yassersoft.com/?menu=CFORUM_VIEW_ARTICLE&fid=2&sid=1028
+Parkson大網站：http://blog.xuite.net/parkson/trader?st=c&p=1&w=867499 (除了超詳盡WLD教學外，更是程式交易者必看網站)
+ 
+
+●特別感謝●
+感謝Parkson大的無私奉獻的寫出他的交易心得。我不認識他，但他的BLOG給了我很多很多的啟蒙。 
+感謝Arthur大幫我測試、並提供了很多寶貴的意見！
+ 
+
+●v1.1.11新增功能●
+沒有新增功能, 僅限制日期至2010/3/1
+
+
+●軟體功能●
+TSTW 是一個針對 TradeStation 2000i軟體(以下簡稱TS)開發的即時資料傳輸介面，相
+容於TS內嵌的DBC Subserver，能將與4種即時資料源的即時資料灌入TS。
+特色：
+1. 相容DBC Subserver，就像您在用MSRT DDE一樣。
+2. 資料接收器(DDE2TickQuote.exe)支援跨日商品(外匯)、並具有自動對時功能、各商品可獨立設
+   定開收盤時間避免接入不必要資料。目前可以從1.DDE、2.OfficeQuote、3.XQuote、4.遠端的另一隻DDE2Tickquoet
+   四種資訊源取得資料.
+3. 比MSRT還穩定，Tick也較準確。
+ 
+
+●安裝方式●
+1. 請至C:\建立TSTW資料夾(請一定要建在C:\TSTW下)。然後將壓縮檔內的所有檔案解壓縮到C:\TSTW。
+2. 執行GlobalServer，Tool選單-->Run Setup 執行TS連線配置精靈，接著選 Real Time-->選DBC SubServer-->Historbank選No-->設定完成。
+3. 雙擊C:\TSTW內的Install.bat，此批次檔會自動備份、安裝DBC SubServer需要的INI。[這邊會取代MSRT的設定]
+ 
+
+●第一次使用時的即時資料設定●
+1. 請執行剛剛解壓縮的DDE2TickQuote.exe，您可以在UI上面點選並輸入新數值，或可直接邊輯DDESetting.ini設定檔。
+2. 若您是使用UI介面編輯的，編輯完畢後請按關閉按鈕，將設定存檔，下次執行時才會生效。
+3. 您可在盤中時候按下啟動，若DDE數值有跳動，表示設定正確。
+4. 目前提供四三種資料源: DDE, OfficeQuote, XQuote 與另一隻DDE2TickQuote.exe
+5. 增加了套用範本檔的功能, 目前提供 OfficeQUote, 日盛HTS, 康合全都賺, 元大越是贏, 台證大三元等的定範本檔, 
+   套用範本後將在跨月時自動更換商品代號.
+*4 5項目的功能均在DDE2TickQuote執行後的[相關設定->資訊源設定]內, 設定完後請按右邊的[套用後立刻重啟]
+**壓縮檔內有康合全都賺、與日盛HTS的DDE設定範例, 供您參考!
+ 
+
+●TS + GS 接收即時資料使用方法●
+1. 請執行DDE資料源程式(如日盛HTS + DDEExcel.exe、康合全都賺)。
+2. 並執行DDE2TickQuote.exe後按下啟動按鈕。(DDE資訊有跳動代表資料有收到)
+3. 執行Global Server，選擇Start Online，此時您會看到我的Tick2TS.exe被叫起。
+   a. 確認 Symbol Collection Templates 頁中的 All DBC Stocks 有被啟動 Activate
+   b. 確認 Performance頁 中的 Connect 是 Connected；且 Quotes有在跳動。
+   c. 確認Tick2TS.exe的報價伺服器狀態、GlobalServer狀態、還有中間LOG有跳動。
+   d. OK了，可以去開TS了。
+4. DDE2TickQuote.exe 執行時若參數-auto, 可以讓DDE2TickQuote一啟動就自動開始連線.
+   您可使用捷徑, 或是批次檔, 帶入參數 -auto, 那麼執行捷徑或批次檔後, 就會自動開始連線.
+
+
+●已修正BUG●
+DDE2TickQuote修正元大、寶來會放大100倍問題。[v1.1.8 09/2/16]
+DDE2TickQuote.exe 偶而開盤會送出成交 0的問題.
+
+
+如有不了解處，請參考雅策資訊網站內提供資源：http://www.yassersoft.com
+我的TSTW基本上跟MSRT一模一樣，您可按照一般MSRT的設定方式設定GS TS，只要設定完後執行我的Install.bat即可套用這套程式了。
+

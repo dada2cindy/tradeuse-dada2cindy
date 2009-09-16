@@ -1,0 +1,156 @@
+WLDTW v1.1.11說明書[2009/8/7更新]  
+
+http://docs.google.com/Doc?id=dhmjrb2n_1hq7nr67c 
+請密切上述動態網頁，有新版或相關訊息都會在此網頁發佈。
+
+
+●版權宣告●
+ **************************************
+    本程式僅供個人測試使用, 切勿將收到的
+    交易資訊轉發至廣域網路上, 以免觸法！
+    因網路散佈無遠弗屆, 為避免不可收拾之
+    情事發生, 本程式設有日期限制, 屆時本
+    程式大部分功能將被禁制.
+
+    您可來信：wldtw2008@googlemail.com
+      或瀏覽：http://wldtw2008.at.3322.org
+    索取最新版本.
+ **************************************
+
+
+●相關發佈聯結●
+最新版本下載：請參閱http://docs.google.com/Doc?id=dhmjrb2n_1hq7nr67c內容
+最新說明書：http://docs.google.com/Doc?id=dhmjrb2n_1hq7nr67c 
+說明書沒教的事：http://docs.google.com/Doc?id=dhmjrb2n_2gzmnxxgq 
+如果您是為了TradeStation來的，請至： http://docs.google.com/Doc?id=dhmjrb2n_4d533m4fj [TSTW]
+如果您是為了NeoTicker來的，請至：http://docs.google.com/Doc?id=dhmjrb2n_6d94b8c62 [NTTW]
+
+●相關網路資源聯結●
+Wealth-Lab 官網：http://www.wealth-lab.com
+Parkson大網站：http://blog.xuite.net/parkson/trader?st=c&p=1&w=867499 (除了超詳盡WLD教學外，更是程式交易者必看網站)
+
+
+●特別感謝●
+感謝Parkson大的無私奉獻的寫出他的交易心得。我不認識他，但他的BLOG給了我很多很多的啟蒙。 
+感謝Arthur大幫我測試、並提供了很多寶貴的意見！
+
+
+●v1.1.11新增功能●
+沒有新增功能, 僅限制日期至2010/3/1
+
+
+●軟體功能●
+WLDTW 是一個針對 Wealth-Lab Developer軟體(以下簡稱WLD)開發的資料傳輸介面，
+並提供一系列工具程式，能將台灣期貨交易所網站上公佈的盤後資料、與4種即時資料
+源的即時資料，同時灌入WLD，達到盤後、即時資料的繪製與分析。
+特色：
+1. WLDTW 支援盤後與及時的任意秒檔、分檔、日檔。
+2. 即時資料支援回補。(即使關閉WLD後再執行也可正確畫出已接收的即時分檔)
+3. 歷史資料支援交易所新的複式跨月單
+4. 歷史資料能自動建立接續月份(或稱近月、熱門月份)
+5. 資料接收器(DDE2TickQuote.exe)支援跨日商品(外匯)、並具有自動對時功能、各商品可獨立設
+   定開收盤時間避免接入不必要資料。目前可以從1.DDE、2.OfficeQuote、3.XQuote、4.遠端的另一隻DDE2Tickquoet
+   四種資訊源取得資料.
+6. 資料接收器(DDE2TickQuote.exe)使用壓縮傳輸，資料傳輸速度快(台指期一天的TICK約1MB，壓縮後剩100K)。
+7. 台灣期貨交易所資料下載程式(TaiFexWebDownloader.exe)，可以輸出CSV檔。
+
+
+●安裝方式●
+請加壓縮檔內的所有檔案解壓縮到WLD的路徑下。
+EX: C:\Program Files\Wealth-Lab, Inc\Wealth-Lab Developer 4.0
+
+ 
+●第一次使用時的WLD設定●
+1. 請先安裝WLD 4.0, 並執行WLD 4.0
+2. 請參考下方「第一次使用時的歷史資料轉檔」，先將歷史資料建置完畢。
+3. 建立WLDTW的資訊源
+   選擇 上方選項的DataSources->選擇New DataSource->選擇WLDTW Adapter->選Next按鈕->輸入名稱(假設為TaiFex)->選Next按鈕->選OK->選OK
+4. 確認資訊源正確
+   選擇 上方選項的DataSources->選擇DataSource Manager->在右邊點選步驟2輸入的TaiFex， 此時視窗右上的Symbols如能看到商品列表，那就對了。
+5. 匯入台灣期貨商品開收盤設定
+   選擇 上方選項的TOOL->Futures Symbols Manager->選擇Import from File按鈕->選擇C:\TWFEXData\WLDFeatureTWSymbol.txt
+
+ 
+●第一次使用時的歷史資料轉檔●
+1. 請執行剛剛解壓縮的TaiFexWebDownloader.exe
+2. 按下取得可下載的檔案按鈕，稍待數秒後即可從左方未選項中選擇要轉檔的日期。
+3. 選好後，點選下方的執行按鈕。 轉檔程式就開始運作了。
+備註: 轉檔出來的檔案保存在C:\TWFEXData\
+ 
+
+●第一次使用時的即時資料設定●
+1. 請執行剛剛解壓縮的DDE2TickQuote.exe，您可以在UI上面點選並輸入新數值，或可直接邊輯DDESetting.ini設定檔。
+2. 若您是使用UI介面編輯的，編輯完畢後請按關閉按鈕，將設定存檔，下次執行時才會生效。
+3. 您可在盤中時候按下啟動，若DDE數值有跳動，表示設定正確。
+4. 目前提供四三種資料源: DDE, OfficeQuote, XQuote 與另一隻DDE2TickQuote.exe
+5. 增加了套用範本檔的功能, 目前提供 OfficeQUote, 日盛HTS, 康合全都賺, 元大越是贏, 台證大三元等的定範本檔, 
+   套用範本後將在跨月時自動更換商品代號.
+*4 5項目的功能均在DDE2TickQuote執行後的[相關設定->資訊源設定]內, 設定完後請按右邊的[套用後立刻重啟]
+**壓縮檔內有康合全都賺、與日盛HTS的DDE設定範例, 供您參考!
+ 
+
+●接收即時資料使用方法●
+1. 請執行DDE資料源程式(如日盛HTS + DDEExcel.exe、康合全都賺)。
+2. 並執行DDE2TickQuote.exe後按下啟動按鈕。(DDE資訊有跳動代表資料有收到)
+3. 執行WLD 4.0
+   a. 確認 上方選項的DataSources->Enable Future Mode 有勾選
+   b. 確認 上方選項的DataSources->Select Streaming Provider->選取了WLDTW
+   c. 確認 上方選項的DataSources->Enable Streaming - WLDTW 有勾選
+4. 去開你要看的指標吧!(記得商品要選「第一次使用時的WLD設定」輸入的TaiFex群組內的商品)
+5. DDE2TickQuote.exe 執行時若參數-auto, 可以讓DDE2TickQuote一啟動就自動開始連線.
+   您可使用捷徑, 或是批次檔, 帶入參數 -auto, 那麼執行捷徑或批次檔後, 就會自動開始連線.
+
+
+●不接收即時資料，只使用歷史資料●
+1. 執行WLD 4.0
+   a. 確認 上方選項的DataSources->Enable Future Mode 有勾選
+2. 去開你要看的指標吧!(記得商品要選「第一次使用時的WLD設定」輸入的TaiFex群組內的商品)
+[註]建議不要使用此功能，WLD的即時功能中對日檔、分檔的支援度較高。
+
+ 
+●商品代號說明●
+WTX 台指期
+WMT 小台指
+WTE 電子期
+WTF 金融期
+WGD 黃金期
+WTG 台幣黃金期
+WT5 台50期
+WGB 公債期
+WCP 短利期
+WMS 摩台期
+WXI 非金電期
+WGT 櫃買期
+
+
+●未來要做的事●
+1. 同商品多DDE來源備援。
+2. 加入P2P功能(類似BT)，能夠多點備援，越多人看的商品，可以回補的越完整。
+
+
+●已修正BUG●
+DDE2TickQuote修正元大、寶來會放大100倍問題。[v1.1.8 09/2/16] 
+WLDTW 可以開啟其他非台灣交易所的商品(ex: 有C:\TWFEXData\1min\M1EC\M1EC_HOT\ 即有M1EC_HOT這個商品)。[2008/8/14]
+DDE2TickQuote.exe v1.1 必須手動建立temp資料夾問題。[2008/8/10]
+DDE2TickQuote.exe 不要在8:45分以前按下啟動，否則WLD使用時會當機(若不幸發生，請清除暫存檔可解決)。[2008/7/7]
+DDE2TickQuote.exe 偶而開盤會送出成交 0的問題.
+ 
+
+●作者雜唸●
+以我多年在報價市場打滾的經驗，這套軟體的出現，我相信一定讓您訝異不已! 這套程式的穩定度
+與完成度我個人是相當滿意的。
+
+尤其是DDE2TickQuote.exe這支程式，我相信他已經達到了商業化的需求，您可在盤中
+執行DDE2TickQuote.exe的狀態下，在CMD模式敲入 telnet 127.0.0.1 4568接收即時TICK，
+也可在CMD模式敲入 telnet 127.0.0.1 4567，再貼上後述指令GETTXT_ID=WTX_HOT,Seq=123,Req=GetCurMinBars,Interval=1,[按下Enter]
+即可取得WTX_HOT的當日資料回補。
+
+我是以TCP/IP實做資料廣播與發送，因此可以跨廣域網路，而其中TICK模式(4568)支援16個客戶端，
+回補模式(4567)支援64個客戶端。我想真的只有商業程式有此穩定與功能。
+
+說實話我真的花了好多的下班後自己的時間、精神在撰寫這套程式，也不排除未來邁向商業化或同類
+程式的合作(例如TS即時化)、一對多資訊源分接等等的合作。
+
+總之現在我覺得這一套工具可以Show給大家看了，因此把它Release出來，以饗同好，希望大家會喜歡!
+另外也感謝Parkson的無私奉獻的寫出他的交易心得。最初我在他的BLOG看到他的付出，才讓我燃起撰
+寫這個套程式的動力！
