@@ -152,12 +152,4 @@
     <LogDate>2009-09-14T08:04:55.734375+08:00</LogDate>
     <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
   </MyLog>
-  <MyLog LogLevel="2">
-    <LogDate>2009-09-10T04:14:39.05475+08:00</LogDate>
-    <LogMessage>台証0020200重新連線第 1次</LogMessage>
-  </MyLog>
-  <MyLog LogLevel="2">
-    <LogDate>2009-09-10T04:14:39.101625+08:00</LogDate>
-    <LogMessage>台証0020200重新連線第 2次</LogMessage>
-  </MyLog>
 </MyLogList>
