@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TradeAccount>
   <MyOrder AccountName="橡膠15分" StrategyName="JRU-Range-Ex">
-    <CurrentPosition>0</CurrentPosition>
+    <CurrentPosition>1</CurrentPosition>
     <PriceFlag>1</PriceFlag>
     <Slippage>0</Slippage>
     <OrderNum>1</OrderNum>
