@@ -1,12 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <OpenPositions>
-  <System SystemName="JRU-Range">
+  <System SystemName="JRU-Range-Ex">
     <Symbol>JRU</Symbol>
-    <EntryPrice>195.9</EntryPrice>
-    <Profit>-7500</Profit>
-    <EntryTime>2009-09-28T08:15:00</EntryTime>
+    <EntryPrice>205</EntryPrice>
+    <Profit>-10000</Profit>
+    <EntryTime>2009-10-01T08:15:00</EntryTime>
     <Signal>1</Signal>
-    <Workspace>JRU-Range.orw</Workspace>
+    <Workspace>JRU-Range-Ex.orw</Workspace>
+    <PositionNumber>0</PositionNumber>
+  </System>
+  <System SystemName="JRU-Range-Ex">
+    <Symbol>JRU</Symbol>
+    <EntryPrice>205</EntryPrice>
+    <Profit>-9500</Profit>
+    <EntryTime>2009-10-01T08:15:00</EntryTime>
+    <Signal>1</Signal>
+    <Workspace>JRU-Range-Ex.orw</Workspace>
     <PositionNumber>0</PositionNumber>
   </System>
 </OpenPositions>
