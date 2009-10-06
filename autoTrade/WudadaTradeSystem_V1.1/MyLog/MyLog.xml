@@ -212,4 +212,24 @@
     <LogDate>2009-10-02T00:47:45.918125+08:00</LogDate>
     <LogMessage>台証0020200重新連線第 1次</LogMessage>
   </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-10-05T14:37:04.635875+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 1次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-10-05T14:37:05.1515+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 2次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-10-06T05:28:58.844125+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 1次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-10-06T05:28:58.906625+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 2次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-10-06T07:37:27.456875+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 1次</LogMessage>
+  </MyLog>
 </MyLogList>

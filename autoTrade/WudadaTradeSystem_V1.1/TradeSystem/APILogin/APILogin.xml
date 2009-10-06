@@ -1,2 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<APILoginList />
+<APILoginList>
+  <APILogin APIAccount="台証-0020200">
+    <ConnectStatus>連線成功</ConnectStatus>
+  </APILogin>
+</APILoginList>
