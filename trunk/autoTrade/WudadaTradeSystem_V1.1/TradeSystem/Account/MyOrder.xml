@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TradeAccount>
-  <MyOrder AccountName="橡膠15分" StrategyName="JRU-Range-Ex">
+  <MyOrder AccountName="橡膠15分" StrategyName="JRU-BackProfit-Same">
     <CurrentPosition>0</CurrentPosition>
     <PriceFlag>1</PriceFlag>
     <Slippage>0</Slippage>
