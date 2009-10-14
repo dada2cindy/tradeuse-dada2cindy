@@ -240,4 +240,20 @@
     <LogDate>2009-10-07T07:55:24.88675+08:00</LogDate>
     <LogMessage>台証0020200重新連線第 1次</LogMessage>
   </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-10-12T01:13:44.890625+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-10-12T05:11:12.453125+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 1次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-10-12T05:11:12.5+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 2次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-10-14T01:33:53.818375+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
 </MyLogList>
