@@ -3,7 +3,7 @@
   <Strategy StrategyName="JRU-BackProfit-Same">
     <FileType>1</FileType>
     <FileName />
-    <Signal>-1</Signal>
-    <OrderPrice>224.5</OrderPrice>
+    <Signal>1</Signal>
+    <OrderPrice>228.7</OrderPrice>
   </Strategy>
 </TradeSystem>
