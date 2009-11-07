@@ -2,10 +2,10 @@
 <OpenPositions>
   <System SystemName="JRU-BackProfit-Same">
     <Symbol>JRU</Symbol>
-    <EntryPrice>224.5</EntryPrice>
-    <Profit>-7500</Profit>
-    <EntryTime>2009-11-02T08:30:00</EntryTime>
-    <Signal>-1</Signal>
+    <EntryPrice>228.7</EntryPrice>
+    <Profit>7500</Profit>
+    <EntryTime>2009-11-04T08:30:00</EntryTime>
+    <Signal>1</Signal>
     <Workspace>JRU-Range-BackProfit-same.orw</Workspace>
     <PositionNumber>0</PositionNumber>
   </System>
