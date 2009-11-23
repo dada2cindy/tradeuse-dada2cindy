@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TradeSystem>
-  <Strategy StrategyName="JRU-BackProfit-Same">
+  <Strategy StrategyName="JRU-Reset-Order">
     <FileType>1</FileType>
     <FileName />
     <Signal>1</Signal>
-    <OrderPrice>236.3</OrderPrice>
+    <OrderPrice>232.7</OrderPrice>
   </Strategy>
 </TradeSystem>
