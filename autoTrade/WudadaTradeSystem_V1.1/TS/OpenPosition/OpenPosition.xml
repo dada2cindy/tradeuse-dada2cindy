@@ -2,9 +2,9 @@
 <OpenPositions>
   <System SystemName="JRU-Reset-Order">
     <Symbol>JRU</Symbol>
-    <EntryPrice>232.7</EntryPrice>
-    <Profit>57500</Profit>
-    <EntryTime>2009-11-11T16:30:00</EntryTime>
+    <EntryPrice>241.9</EntryPrice>
+    <Profit>53500</Profit>
+    <EntryTime>2009-11-27T18:00:00</EntryTime>
     <Signal>1</Signal>
     <Workspace>JRU-Reset-Order.orw</Workspace>
     <PositionNumber>0</PositionNumber>

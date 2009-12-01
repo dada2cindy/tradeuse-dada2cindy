@@ -524,4 +524,8 @@
     <LogDate>2009-11-23T22:39:07.875+08:00</LogDate>
     <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
   </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-11-27T02:10:47.76475+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
 </MyLogList>
