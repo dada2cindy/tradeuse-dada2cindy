@@ -1,21 +1,2 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<OpenPositions>
-  <System SystemName="JRU-Reset-Order">
-    <Symbol>JRU</Symbol>
-    <EntryPrice>241.9</EntryPrice>
-    <Profit>79000</Profit>
-    <EntryTime>2009-11-27T18:00:00</EntryTime>
-    <Signal>1</Signal>
-    <Workspace>JRU-Reset-Order.orw</Workspace>
-    <PositionNumber>0</PositionNumber>
-  </System>
-  <System SystemName="JRU-BackProfit-Same">
-    <Symbol>JRU</Symbol>
-    <EntryPrice>241.9</EntryPrice>
-    <Profit>79000</Profit>
-    <EntryTime>2009-11-27T18:00:00</EntryTime>
-    <Signal>1</Signal>
-    <Workspace>JRU-BackProfit-Same.orw</Workspace>
-    <PositionNumber>0</PositionNumber>
-  </System>
-</OpenPositions>
+<OpenPositions />
