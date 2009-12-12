@@ -3,7 +3,7 @@
   <Strategy StrategyName="JRU-Reset-Order">
     <FileType>1</FileType>
     <FileName />
-    <Signal>1</Signal>
-    <OrderPrice>241.9</OrderPrice>
+    <Signal>0</Signal>
+    <OrderPrice>0</OrderPrice>
   </Strategy>
 </TradeSystem>

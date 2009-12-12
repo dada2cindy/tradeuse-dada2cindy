@@ -532,4 +532,56 @@
     <LogDate>2009-12-03T01:31:53.1875+08:00</LogDate>
     <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
   </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-12-05T00:36:09.479125+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-12-05T00:38:26.38125+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-12-06T23:48:22.890625+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-12-07T04:16:23.921875+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 1次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-12-07T04:16:24.03125+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 2次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-12-07T22:52:18.386375+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 1次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-12-07T22:52:21.99225+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-12-08T07:01:55.5775+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 1次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-12-08T07:01:56.093125+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 2次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-12-10T05:00:28.78075+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 1次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-12-10T05:00:29.327625+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 2次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-12-11T03:41:00.368+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 1次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2009-12-11T03:41:00.5555+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 2次</LogMessage>
+  </MyLog>
 </MyLogList>
