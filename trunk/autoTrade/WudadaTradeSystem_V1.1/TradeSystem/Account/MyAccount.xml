@@ -33,7 +33,7 @@
     <StockType>-1</StockType>
     <IsStockPublic>False</IsStockPublic>
     <IsDayTrade>False</IsDayTrade>
-    <TradeMonth>2010/05</TradeMonth>
+    <TradeMonth>2010/06</TradeMonth>
     <ExMessage></ExMessage>
   </MyAccount>
 </TradeAccount>
