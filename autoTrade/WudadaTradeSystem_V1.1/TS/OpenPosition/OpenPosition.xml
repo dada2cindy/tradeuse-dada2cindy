@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <OpenPositions>
-  <System SystemName="JGCZ-Range-Ex">
-    <Symbol>JGCZ</Symbol>
-    <EntryPrice>3383</EntryPrice>
-    <Profit>11000</Profit>
-    <EntryTime>2010-01-08T22:00:00</EntryTime>
+  <System SystemName="JRU-Reset-Order">
+    <Symbol>JRU</Symbol>
+    <EntryPrice>293.8</EntryPrice>
+    <Profit>47500</Profit>
+    <EntryTime>2010-01-13T08:30:00</EntryTime>
     <Signal>1</Signal>
-    <Workspace>JGCZ.orw</Workspace>
+    <Workspace>JRU-Reset-Order.orw</Workspace>
     <PositionNumber>0</PositionNumber>
   </System>
 </OpenPositions>
