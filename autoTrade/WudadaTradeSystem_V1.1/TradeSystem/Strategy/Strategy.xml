@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TradeSystem>
-  <Strategy StrategyName="JRU-Reset-Order">
+  <Strategy StrategyName="JRU-AutoChange">
     <FileType>1</FileType>
     <FileName />
     <Signal>1</Signal>

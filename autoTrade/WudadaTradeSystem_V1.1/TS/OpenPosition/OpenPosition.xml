@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <OpenPositions>
-  <System SystemName="JRU-Reset-Order">
+  <System SystemName="JRU-AutoChange">
     <Symbol>JRU</Symbol>
     <EntryPrice>300.8</EntryPrice>
     <Profit>-4500</Profit>
     <EntryTime>2010-01-19T16:30:00</EntryTime>
     <Signal>1</Signal>
-    <Workspace>JRU-Reset-Order.orw</Workspace>
+    <Workspace>JRU-AutoChange.orw</Workspace>
     <PositionNumber>0</PositionNumber>
   </System>
 </OpenPositions>
