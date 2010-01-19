@@ -672,4 +672,116 @@
     <LogDate>2010-01-13T08:22:47.239125+08:00</LogDate>
     <LogMessage>台証0020200重新連線第 1次</LogMessage>
   </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2010-01-14T07:06:26.796875+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 1次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2010-01-14T07:06:26.953125+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 2次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2010-01-14T07:50:29.703125+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 1次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2010-01-14T08:15:39.015625+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 1次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2010-01-15T01:33:58.43925+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2010-01-15T03:13:45.1755+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2010-01-15T07:03:49.279125+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 1次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2010-01-15T07:03:49.435375+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 2次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2010-01-15T08:06:24.70175+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 1次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2010-01-15T14:14:35.66225+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2010-01-15T14:15:02.544625+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2010-01-15T16:02:51.877375+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 1次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2010-01-15T16:02:52.018+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 2次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2010-01-18T07:06:39.3405+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 1次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2010-01-18T07:06:39.512375+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 2次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2010-01-18T07:54:02.56125+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 1次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2010-01-18T13:36:14.99575+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2010-01-18T13:45:05.357+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2010-01-18T23:17:10.973+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 1次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2010-01-19T07:05:01.1575+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 1次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2010-01-19T07:05:01.37625+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 2次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2010-01-19T07:56:53.6765+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 1次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2010-01-19T11:23:38.694125+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2010-01-19T11:30:02.332125+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2010-01-19T16:00:03.616875+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2010-01-19T16:15:29.652125+08:00</LogDate>
+    <LogMessage>執行台証下單，下單商品：橡膠，委託成功</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2010-01-20T00:07:41.75825+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 1次</LogMessage>
+  </MyLog>
+  <MyLog LogLevel="2">
+    <LogDate>2010-01-20T00:07:42.102+08:00</LogDate>
+    <LogMessage>台証0020200重新連線第 2次</LogMessage>
+  </MyLog>
 </MyLogList>
