@@ -1,0 +1,152 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Drawing;
+using WealthLab;
+using WealthLab.Indicators;
+
+namespace WealthLab.Strategies
+{
+	public class MyStrategy : WealthScript
+	{
+		private int currentPosition; //目前倉位
+		
+		#region //最佳化變數
+		
+		private StrategyParameter wkEMAPeriod; //週EMA變數
+		private StrategyParameter dayEMAPeriod; //日EMA變數
+		private StrategyParameter dayBBandUpperPeriod; //日BBandUpperPeriod; 
+		private StrategyParameter dayBBandLowerPeriod; //日BBandLowerPeriod; 
+		
+		#endregion
+		
+		public MyStrategy()
+		{	
+			currentPosition = 0;
+			wkEMAPeriod = CreateParameter("Week EMAPeriod", 10, 5, 50, 5);
+			dayEMAPeriod = CreateParameter("Day EMA Period", 20, 5, 100, 5);
+			dayBBandUpperPeriod = CreateParameter("Day BBandUpper Period", 20, 10, 40, 5);
+			dayBBandLowerPeriod = CreateParameter("Day BBandLower Period", 20, 10, 40, 5);
+		}
+		protected override void Execute()
+		{
+			//取得目前最佳化變數值
+			int wkPer = wkEMAPeriod.ValueInt;
+			int dayPer = dayEMAPeriod.ValueInt;
+			int dayBBandUpperPer = dayBBandUpperPeriod.ValueInt;
+			int dayBBandLowerPer = dayBBandLowerPeriod.ValueInt;
+			
+			// Workaround for GetWeeklyBar
+			SetScaleWeekly();            
+			DataSeries CompBar = new DataSeries(Bars, "Compressed Bar Numbers");	// initialize a DataSeries
+			for (int bar = 0; bar < Bars.Count; bar++)
+				CompBar[bar] = bar;
+
+			// Weekly EMA
+			DataSeries wk_ema = EMA.Series( Bars.Close, wkPer, EMACalculation.Modern );
+			RestoreScale();
+			DataSeries wk_ema_synchedToIntraday = Synchronize( wk_ema );
+			DataSeries GetWeeklyBar = Synchronize(CompBar);
+			PlotSeries( PricePane, wk_ema_synchedToIntraday, Color.Blue, LineStyle.Solid, 2 );        
+			
+			SetScaleDaily();
+			// Daily EMA
+			DataSeries day_ema = EMA.Series( Bars.Close, dayPer, EMACalculation.Modern );
+			DataSeries day_parab = Parabolic.Series(Bars, 0.02, 0.02, 0.2);
+			DataSeries day_bbandupper = BBandUpper.Series(Bars.Close, dayBBandUpperPer, 2);
+			DataSeries day_bbandlower = BBandLower.Series(Bars.Close, dayBBandLowerPer, 2);
+			RestoreScale();
+			PlotSeries(PricePane, day_ema, Color.Purple, LineStyle.Solid, 2);
+			PlotSeries(PricePane, day_parab, Color.Brown, LineStyle.Dots, 3);
+			PlotSeries(PricePane, day_bbandupper, Color.SkyBlue, LineStyle.Solid, 2);
+			PlotSeries(PricePane, day_bbandlower, Color.SkyBlue, LineStyle.Solid, 2);
+
+			for(int bar = 30; bar < Bars.Count; bar++)
+			{				
+				DateTime currentDate = Bars.Date[bar]; //目前Bar的星期
+				//PrintDebug(currentDate.DayOfWeek);
+				
+				int gwb = (int)GetWeeklyBar[bar]; //周K
+				//PrintDebug("day: "+day_ema[bar]);
+				//PrintDebug("week: "+wk_ema[gwb]);
+				//PrintDebug("parab_ema: "+parab_ema[bar]);
+				//PrintDebug("close: "+Bars.Close[bar]);
+				
+				double close = Bars.Close[bar]; //收盤價
+				double dayEMA = day_ema[bar]; //日EMA
+				double datParab = day_parab[bar]; //日Parabolic
+				double weekEMA = wk_ema[gwb]; //週EMA				
+				
+				#region //基本進出場	
+				
+				if( close > dayEMA && close > datParab && close > weekEMA )
+				{
+					//設定背景顏色 紅色偏多方
+					SetBackgroundColor(bar, Color.Pink );
+														
+					if (currentPosition == 0) //目前沒有倉位時
+					{       
+						if(currentDate.DayOfWeek.Equals(DayOfWeek.Friday))
+						{
+							//下多單
+							BuyAtClose(bar, "B");
+							currentPosition = 1;
+						}
+					}
+					else if(currentPosition == -1) //目前倉位為空單時
+					{
+						if(currentDate.DayOfWeek.Equals(DayOfWeek.Friday))
+						{
+							//空單平倉
+							CoverAtClose(bar, LastPosition);
+							currentPosition = 0;
+						
+							if(currentPosition == 0)
+							{
+								//下多單
+								BuyAtClose(bar, "B2");
+								currentPosition = 1;
+							}
+						}
+					}					
+					
+				}
+				else if( close < dayEMA && close < datParab && close < weekEMA )
+				{
+					//設定背景顏色 綠色偏空方
+					SetBackgroundColor(bar, Color.GreenYellow );
+									
+					if (currentPosition == 0) //目前沒有倉位時
+					{     
+						if(currentDate.DayOfWeek.Equals(DayOfWeek.Friday))
+						{
+							//下空單
+							ShortAtClose(bar, "S");
+							currentPosition = -1;
+						}
+					}
+					else if(IsLastPositionActive && (LastPosition.PositionType.Equals(PositionType.Long))) //目前倉位為多單時
+					{
+						if(currentDate.DayOfWeek.Equals(DayOfWeek.Friday))
+						{
+							//多單平倉
+							SellAtClose(bar, LastPosition);		
+							currentPosition = 0;
+						
+							//下空單
+							if(currentPosition == 0)
+							{
+								ShortAtClose(bar, "S2");
+								currentPosition = -1;
+							}
+						}
+					}			
+				}
+				
+				#endregion
+				
+				
+			}
+		}
+	}
+}

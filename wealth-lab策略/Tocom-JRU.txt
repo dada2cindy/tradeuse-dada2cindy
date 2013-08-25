@@ -1,0 +1,405 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Drawing;
+using WealthLab;
+using WealthLab.Indicators;
+using System.IO;
+
+namespace WealthLab.Strategies
+{
+	public class EmaV2 : WealthScript
+	{
+		private int currentPosition; //目前倉位		
+		
+		#region //最佳化變數
+		
+		private StrategyParameter wkEMAPeriod; //週EMA變數
+		private StrategyParameter dayEMAPeriod; //日EMA變數		
+		private StrategyParameter stopPointPeriod; //停損點數
+		private StrategyParameter stopProfitPointPeriod; //停獲點數		
+		private StrategyParameter dayBBandUpperPeriod; //日BBandUpperPeriod; 
+		private StrategyParameter dayBBandLowerPeriod; //日BBandLowerPeriod; 
+		#endregion
+		
+		public EmaV2()
+		{	
+			currentPosition = 0;
+			wkEMAPeriod = CreateParameter("Week EMAPeriod", 10, 10, 10, 5);
+			dayEMAPeriod = CreateParameter("Day EMA Period", 20, 15, 20, 5);
+			stopPointPeriod = CreateParameter("Stop Point", 15, 10, 15, 5);
+			stopProfitPointPeriod = CreateParameter("Stop Profit Point", 30, 15, 60, 5);
+			dayBBandUpperPeriod = CreateParameter("Day BBandUpper Period", 20, 10, 40, 5);
+			dayBBandLowerPeriod = CreateParameter("Day BBandLower Period", 20, 10, 40, 5);
+		}
+		
+		protected override void Execute()
+		{
+			//取得目前最佳化變數值
+			int wkEMAPer = wkEMAPeriod.ValueInt;
+			int dayEMAPer = dayEMAPeriod.ValueInt;
+			double stopPointPer = stopPointPeriod.Value; 
+			double stopProfitPointPer = stopProfitPointPeriod.Value;
+			int dayBBandUpperPer = dayBBandUpperPeriod.ValueInt;
+			int dayBBandLowerPer = dayBBandLowerPeriod.ValueInt;
+			
+			// Workaround for GetWeeklyBar
+			SetScaleWeekly();            
+			DataSeries CompBar = new DataSeries(Bars, "Compressed Bar Numbers");	// initialize a DataSeries
+			for (int bar = 0; bar < Bars.Count; bar++)
+				CompBar[bar] = bar;
+
+			// Weekly EMA
+			DataSeries wk_ema = EMA.Series( Bars.Close, wkEMAPer, EMACalculation.Modern );
+			RestoreScale();
+			DataSeries wk_ema_synchedToIntraday = Synchronize( wk_ema );
+			DataSeries GetWeeklyBar = Synchronize(CompBar);
+			PlotSeries( PricePane, wk_ema_synchedToIntraday, Color.Blue, LineStyle.Solid, 2 );        
+			
+			SetScaleDaily();
+			// Daily EMA
+			DataSeries day_ema = EMA.Series( Bars.Close, dayEMAPer, EMACalculation.Modern );
+			DataSeries day_parab = Parabolic.Series(Bars, 0.02, 0.02, 0.2);
+			DataSeries day_bbandupper = BBandUpper.Series(Bars.Close, dayBBandUpperPer, 2);
+			DataSeries day_bbandlower = BBandLower.Series(Bars.Close, dayBBandLowerPer, 2);
+			RestoreScale();
+			PlotSeries(PricePane, day_ema, Color.Purple, LineStyle.Solid, 2);
+			PlotSeries(PricePane, day_parab, Color.Brown, LineStyle.Dots, 3);
+			PlotSeries(PricePane, day_bbandupper, Color.SkyBlue, LineStyle.Solid, 2);
+			PlotSeries(PricePane, day_bbandlower, Color.SkyBlue, LineStyle.Solid, 2);
+
+			for(int bar = 30; bar < Bars.Count; bar++)
+			{				
+				DateTime currentDate = Bars.Date[bar]; //目前Bar的星期
+				if(currentDate.DayOfWeek.Equals(DayOfWeek.Friday)) //設定星期五且的背景顏色
+				{
+					//SetBackgroundColor(bar, Color.CornflowerBlue );
+				}
+				//PrintDebug(currentDate.DayOfWeek);
+				
+				int gwb = (int)GetWeeklyBar[bar]; //周K
+
+				double close = Bars.Close[bar]; //收盤價
+				double open = Bars.Open[bar]; //開盤價
+				double dayEMA = day_ema[bar]; //日EMA
+				double dayParab = day_parab[bar]; //日Parabolic
+				double weekEMA = wk_ema[gwb]; //週EMA
+				double dayBBandUpper = day_bbandupper[bar]; //日BBandUpper
+				double dayBBandLower = day_bbandlower[bar]; //日BBandLower	
+				int positionCount = Positions.Count; //交易次數
+				
+				#region //基本進出場	
+				
+				if( close > dayEMA && close > dayParab && close > weekEMA )
+				{
+					#region //設定背景顏色 
+					
+					SetBackgroundColor(bar, Color.Pink ); //紅色偏多方
+					if(currentDate.DayOfWeek.Equals(DayOfWeek.Friday)) //設定星期五且偏多的背景顏色
+					{
+						//SetBackgroundColor(bar, Color.HotPink );
+					}
+					
+					#endregion
+														
+					if (currentPosition == 0) //目前沒有倉位時
+					{       
+						//上一筆做空才可做多
+						if(LastPosition == null || LastPosition.PositionType.Equals(PositionType.Short)) 
+						{
+							if(currentDate.DayOfWeek.Equals(DayOfWeek.Friday))
+							{
+								//下多單
+								BuyAtClose(bar, "B");
+								currentPosition = 1;
+							}
+						}
+					}
+					else if(currentPosition == -1) //目前倉位為空單時
+					{
+						if(currentDate.DayOfWeek.Equals(DayOfWeek.Friday))
+						{
+							//空單平倉
+							CoverAtClose(bar, LastPosition);
+							currentPosition = 0;
+						
+							if(currentPosition == 0)
+							{
+								//下多單
+								BuyAtClose(bar, "B2");
+								currentPosition = 1;
+							}
+						}
+					}					
+					
+				}
+				else if( close < dayEMA && close < dayParab && close < weekEMA )
+				{
+					#region //設定背景顏色 
+					
+					//設定背景顏色 綠色偏空方
+					SetBackgroundColor(bar, Color.GreenYellow );
+					if(currentDate.DayOfWeek.Equals(DayOfWeek.Friday)) //設定星期五且偏多的背景顏色
+					{
+						//SetBackgroundColor(bar, Color.SkyBlue );
+					}
+					
+					#endregion
+									
+					if (currentPosition == 0) //目前沒有倉位時
+					{     
+						//上一筆做多才可做空
+						if(LastPosition == null || LastPosition.PositionType.Equals(PositionType.Long)) 
+						{
+							if(currentDate.DayOfWeek.Equals(DayOfWeek.Friday))
+							{
+								//下空單
+								ShortAtClose(bar, "S");
+								currentPosition = -1;
+							}
+						}
+					}
+					else if(currentPosition == 1) //目前倉位為多單時
+					{
+						if(currentDate.DayOfWeek.Equals(DayOfWeek.Friday))
+						{
+							//多單平倉
+							SellAtClose(bar, LastPosition);		
+							currentPosition = 0;
+						
+							//下空單
+							if(currentPosition == 0)
+							{
+								ShortAtClose(bar, "S2");
+								currentPosition = -1;
+							}
+						}
+					}			
+				}
+				
+				#endregion
+				
+				#region //停損
+				
+				if(currentPosition == 1 ) //多單的停損
+				{			
+					#region //判斷前2次虧損，這次交易賠最多5點出場
+					if(positionCount > 3) 
+					{
+						bool doStopProfit = true ;
+						for(int i = (positionCount - 3); i < (positionCount - 1); i++)
+						{
+							if(Positions[i].ProfitPerBar > 0)
+							{
+								doStopProfit = false;
+								break;
+							}
+						}
+						if(doStopProfit)
+						{
+							double stopPrice = LastPosition.EntryPrice - 10;
+							SellAtStop( bar, LastPosition, stopPrice, "SellAtStop" );
+						}
+					}
+					#endregion
+					
+					#region //收盤小於日EMA
+					if(close < dayEMA) 
+					{
+						double currentProfit = close - LastPosition.EntryPrice; //目前損益
+						if(currentProfit < 0) //目前多單為虧損
+						{
+							if(Math.Abs(currentProfit) >= stopPointPer) //虧損大於設定值
+							{
+								//多單平倉
+								SellAtClose(bar, LastPosition);		
+								currentPosition = 0;
+								
+								//下空單
+								if(currentPosition == 0)
+								{
+									ShortAtClose(bar, "S3");
+									currentPosition = -1;
+								}
+							}
+						}
+					}
+					#endregion									
+				}
+				else if(currentPosition == -1 ) //空單的停損
+				{			
+					#region //判斷前2次虧損，這次交易賠最多5點出場
+					if(positionCount > 3) 
+					{
+						bool doStopProfit = true ;
+						for(int i = (positionCount - 3); i < (positionCount - 1); i++)
+						{
+							if(Positions[i].ProfitPerBar > 0)
+							{
+								doStopProfit = false;
+								break;
+							}
+						}
+						if(doStopProfit)
+						{
+							double stopPrice = LastPosition.EntryPrice + 10;
+							CoverAtStop( bar, LastPosition, stopPrice, "CoverAtStop" );
+						}
+					}
+					#endregion
+					
+					#region //收盤小於日EMA
+					if(close > dayEMA) //收盤小於日EMA
+					{
+						double currentProfit = LastPosition.EntryPrice - close; //目前損益
+						if(currentProfit < 0) //目前空單為虧損
+						{
+							if(Math.Abs(currentProfit) >= stopPointPer) //虧損大於設定值
+							{
+								//空單平倉
+								CoverAtClose(bar, LastPosition);
+								currentPosition = 0;
+								
+								if(currentPosition == 0)
+								{
+									//下多單
+									BuyAtClose(bar, "B3");
+									currentPosition = 1;
+								}
+							}
+						}
+					}
+					#endregion								
+				}
+				
+				#endregion
+								
+				#region //停利
+				
+				if(currentPosition == 1 ) //多單的停利
+				{										
+					#region //判斷前三次虧損，這次交易賺20點出場
+					if(positionCount > 3) 
+					{
+						bool doStopProfit = true ;
+						for(int i = (positionCount - 4); i < (positionCount - 1); i++)
+						{
+							if(Positions[i].ProfitPerBar > 0)
+							{
+								doStopProfit = false;
+								break;
+							}
+						}
+						if(doStopProfit)
+						{
+							double limitPrice = LastPosition.EntryPrice + 20;
+							SellAtLimit( bar, LastPosition, limitPrice, "SL" );
+						}
+					}
+					#endregion
+					
+					continue; //不使用，跳過
+					#region //收盤小於日EMA且為星期五
+					if(close < dayEMA && close < dayParab && currentDate.DayOfWeek.Equals(DayOfWeek.Friday)) 
+					{
+						double currentProfit = close - LastPosition.EntryPrice; //目前損益
+						if(currentProfit >= stopProfitPointPer) //獲利大於設定值
+						{
+							//多單平倉
+							SellAtClose(bar, LastPosition);		
+							currentPosition = 0;
+						}
+					}
+					#endregion
+				}
+				else if(currentPosition == -1 ) //空單的停利
+				{
+					#region //判斷前三次虧損，這次交易賺20點出場
+					if(positionCount > 4) 
+					{
+						bool doStopProfit = true ;
+						for(int i = (positionCount - 4); i < (positionCount - 1); i++)
+						{
+							if(Positions[i].ProfitPerBar > 0)
+							{
+								doStopProfit = false;
+								break;
+							}
+						}
+						if(doStopProfit)
+						{
+							double limitPrice = LastPosition.EntryPrice - 20;
+							CoverAtLimit( bar, LastPosition, limitPrice, "CL" );
+						}
+					}
+					#endregion
+					
+					#region //收盤大於日EMA 且為星期五
+					if(close > dayEMA && close > dayParab && currentDate.DayOfWeek.Equals(DayOfWeek.Friday)) 
+					{
+						double currentProfit = LastPosition.EntryPrice - close; //目前損益
+						if(currentProfit >= stopProfitPointPer) //獲利大於設定值
+						{
+							//空單平倉
+							CoverAtClose(bar, LastPosition);		
+							currentPosition = 0;
+						}
+					}
+					#endregion
+					
+					#region //收盤大於開盤(收紅K) 且收盤小於BBandLower 且收盤要大於開盤3點以上
+					if(close > open && close < dayBBandLower && close >= (open + 3) ) 
+					{
+						double currentProfit = LastPosition.EntryPrice - close; //目前損益
+						if(currentProfit >= stopProfitPointPer) //獲利大於設定值
+						{
+							//空單平倉
+							CoverAtClose(bar, LastPosition);		
+							currentPosition = 0;
+						}
+					}
+					#endregion
+				}
+				
+				#endregion
+			}
+			
+			#region //將目前訊號寫到.txt
+			
+			int lastBarCount = Bars.Count - 1;
+			double lastClose = Bars.Close[lastBarCount]; //收盤價
+			double lastDayEMA = day_ema[lastBarCount]; //日EMA
+			double lastWeekEMA = wk_ema[(int)GetWeeklyBar[lastBarCount]]; //週EMA
+			double lastDayParab = day_parab[lastBarCount]; //日Parabolic			
+			double lastDayBBandUpper = day_bbandupper[lastBarCount]; //日BBandUpper
+			double lastDayBBandLower = day_bbandlower[lastBarCount]; //日BBandLower
+			double lastEntryPrice = LastPosition.EntryPrice; //進場價
+			double lastExitPrice = LastPosition.ExitPrice; //出場價
+			DateTime lastEntryDate = LastPosition.EntryDate; //進場日
+			DateTime lastExitDate = LastPosition.ExitDate; //出場日 
+			
+			string signalPath = @"D:\signal";
+			string outFileName = "jru.txt";
+			FileStream fs = File.Create(Path.Combine(signalPath, outFileName));			
+			fs.Close();
+			fs.Dispose();
+			
+			StreamWriter stmWtr = new StreamWriter(Path.Combine(signalPath, outFileName), true);
+			stmWtr.WriteLine("目前倉位:" + currentPosition);
+			stmWtr.WriteLine("目前收盤價:" + lastClose);
+			stmWtr.WriteLine("進場價:" + lastEntryPrice);
+			stmWtr.WriteLine("出場價:" + lastExitPrice);
+			stmWtr.WriteLine("進場日:" + lastEntryDate.ToString());
+			stmWtr.WriteLine("出場日:" + lastExitDate.ToString());
+			stmWtr.WriteLine("日EMA:" + lastDayEMA);
+			stmWtr.WriteLine("週EMA:" + lastWeekEMA);
+			stmWtr.WriteLine("日Parabolic:" + lastDayParab);
+			stmWtr.WriteLine("日BBandUpper:" + lastDayBBandUpper);
+			stmWtr.WriteLine("日BBandLower:" + lastDayBBandLower);
+			stmWtr.WriteLine("週EMA:" + lastWeekEMA);
+			stmWtr.Close();
+			stmWtr.Dispose();
+			#endregion
+		}
+	}
+}
